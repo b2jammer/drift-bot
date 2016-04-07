@@ -13,10 +13,15 @@ public class PS2Controller {
      * Face button IDs.
      */
     public static final int
-            BTN_1=0,
-            BTN_2=1,
-            BTN_3=2,
-            BTN_4=3;
+            BTN_1=1,
+            BTN_2=2,
+            BTN_3=3,
+            BTN_4=4,
+            TRIGGER_LEFT=5,
+            TRIGGER_RIGHT=6,
+            BUMPER_LEFT=7,
+            BUMPER_RIGHT=8;
+            
     /**
      * Joystick axis IDs.
      */

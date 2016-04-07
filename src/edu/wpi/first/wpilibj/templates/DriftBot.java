@@ -40,6 +40,7 @@ public class DriftBot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+        driver.setTurboMode(ps2.getButton(RobotMap.BTN_TURBO));
         driver.driveTank(ps2.getAxis(PS2Controller.LEFT_Y), ps2.getAxis(PS2Controller.RIGHT_Y));
     }
     

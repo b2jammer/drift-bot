@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.*;
  */
 public class DriveController {
     private SpeedController left1,left2,right1,right2;
+    private boolean turboMode;
     public DriveController() {
         left1 = new Talon(RobotMap.PORT_LEFT_1);
         left2 = new Talon(RobotMap.PORT_LEFT_2);
@@ -27,11 +28,18 @@ public class DriveController {
     public void driveTank(double left,double right) {
         driveRaw(ramp(left),ramp(right));
     }
+    public void setTurboMode(boolean mode) {
+        turboMode = mode;
+    }
     private void driveRaw(double left, double right) {
-        left1.set(left);
-        left2.set(-left);
-        right1.set(right);
-        right2.set(-right);
+        double parkMult = 0.6;
+        if (turboMode) {
+            parkMult = 1;
+        }
+        left1.set(left*parkMult);
+        left2.set(-left*parkMult);
+        right1.set(right*parkMult);
+        right2.set(-right*parkMult);
     }
     private double ramp(double first) {
         double result = first;

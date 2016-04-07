@@ -16,4 +16,6 @@ public class RobotMap {
             PORT_LEFT_2=1,
             PORT_RIGHT_1=2,
             PORT_RIGHT_2=3;
+    public static final int
+            BTN_TURBO=PS2Controller.TRIGGER_RIGHT;
 }
