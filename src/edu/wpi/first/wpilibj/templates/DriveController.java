@@ -24,6 +24,9 @@ public class DriveController {
         right = ramp(y+x);
         driveRaw(left,right);
     }
+    public void driveTank(double left,double right) {
+        driveRaw(ramp(left),ramp(right));
+    }
     private void driveRaw(double left, double right) {
         left1.set(left);
         left2.set(-left);
